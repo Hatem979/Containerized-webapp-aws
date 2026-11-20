@@ -1,0 +1,46 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Terraform sensitive and generated files
+*.tfvars
+*.tfvars.json
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Private keys and certificates
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Docker and local development
+.DS_Store
+.vscode/
+
+# Logs
+*.log
+# Local SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Local application data
+instance/
+
+# Terraform plan files
+*.tfplan
+*.plan

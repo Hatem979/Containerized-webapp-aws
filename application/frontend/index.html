@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="container">
+        <header class="header">
+            <div>
+                <h1>Task Manager</h1>
+                <p>Organize your work and stay productive.</p>
+            </div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Tasks</span>
+                <strong id="total-tasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <strong id="completed-tasks">0</strong>
+            </div>
+        </section>
+
+        <section class="task-form">
+            <h2>Add New Task</h2>
+
+            <form id="task-form">
+                <input
+                    type="text"
+                    id="task-input"
+                    placeholder="Enter a task..."
+                    required
+                    maxlength="200"
+                >
+
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+
+        <section class="tasks-section">
+            <h2>My Tasks</h2>
+            <div id="task-list" class="task-list"></div>
+            <p id="empty-message">No tasks yet. Add your first task!</p>
+            <p id="error-message" class="error-message" role="alert"></p>
+        </section>
+    </main>
+</body>
+</html>
