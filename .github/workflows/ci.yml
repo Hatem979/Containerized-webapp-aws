@@ -1,0 +1,44 @@
+
+name: First CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  basic-checks:
+    name: Basic Repository Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Display runner information
+        run: |
+          echo "Hello from GitHub Actions!"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF_NAME"
+
+      - name: Inspect project structure
+        run: |
+          echo "Current directory:"
+          pwd
+
+          echo "Project files:"
+          ls -la
+
+      - name: Verify application files
+        run: |
+          test -f application/backend/app.py
+          test -f application/frontend/index.html
+          test -f AWS/environments/dev/main.tf
+
+          echo "All required files exist!"
